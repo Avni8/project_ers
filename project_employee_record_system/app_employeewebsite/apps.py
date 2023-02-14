@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AppErsConfig(AppConfig):
+class AppEmployeewebsiteConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'app_ers'
+    name = 'app_employeewebsite'
