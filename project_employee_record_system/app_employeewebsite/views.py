@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import EmployeeCreateForm
 from .models import Employee, User, Department
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # def demo(request):
@@ -11,6 +12,7 @@ from django.contrib import messages
 #         "day": "Tuesday"
 #     }
 
+@login_required(login_url='login')
 def employee_index(request):
     """ Returns list of employee as context """
 
