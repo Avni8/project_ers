@@ -17,7 +17,12 @@ def employee_index(request):
     """ Returns list of employee as context """
 
     employee_list = Employee.objects.all()
+
     context = {"data": employee_list}
+    if request.method == "POST":
+        dataList = Employee.objects.filter(full_name=request.POST.get('full_name'))
+        context.update ({"data": dataList})
+        return render(request, 'employees/index_employee.html', context)
 
     return render(request, 'employees/index_employee.html', context)
 
